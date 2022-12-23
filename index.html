@@ -68,7 +68,7 @@
             </div>
             <output id="tip-amount-result"></output>
           </div>
-          <button class="reset-button">RESET</button>
+          <button id="reset" class="reset-button">RESET</button>
       </div>
     </div>
   </div>
@@ -77,7 +77,10 @@
     inputarea.addEventListener("input", custominput);
     document.getElementById("bill-amount").addEventListener("input",custominput);
     document.getElementById("custom-percentage").addEventListener("input",custominput);
+    
     function custominput(){
+      document.getElementById("reset").style.opacity = "1";
+      document.getElementById("reset").style.cursor = "pointer";
     let tipparent = document.getElementById("percentage-area");
     console.log(document.getElementById("percentage-area"));
     let tippercentage;
@@ -109,7 +112,20 @@
     }
 
   })
-
+  document.getElementById("reset").addEventListener ("click", ()=>{
+    let resetbutton=document.getElementById("reset");
+    resetbutton.style.opacity = "0.3";
+    resetbutton.style.cursor = "default";
+    document.getElementById("bill-amount").value = "";
+    document.getElementById("people-amount").value = "";
+    document.getElementById("custom-percentage").value = "Custom";
+    let arraytip = document.getElementsByClassName ("default-value");
+    for (let i = 0; i<arraytip.length; i++){
+      arraytip[i].setAttribute("state","inactive");
+      arraytip[i].style.color = "hsl(0, 0%, 100%)";
+      arraytip[i].style.background  = "hsl(183, 100%, 15%)";
+    }
+  })
 </script>
-</body>
+</body> 
 </html>

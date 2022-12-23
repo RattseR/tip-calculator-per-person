@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <title>Tip Calculator Per Person</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href = "style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <div class="text-logo">
+      <img src="images/logo.svg">
+    </div>
+    <div class="outer-calculator-box">
+      
+      <div class="inside-box">  
+        <div class="bill-area">
+          <p>Bill</p>
+          
+            <input id="bill-amount" class="input-area" type="number">
+          
+        </div>
+        <div class="tip-area" id="percentage-area">
+          <p>Select tip %</p>
+          <input class="default-value" type="button" value="5%"  state="inactive" onclick="active(event)">
+          <input class="default-value" type="button" value="10%" state="inactive" onclick="active(event)">
+          <input class="default-value" type="button" value="15%" state="inactive" onclick="active(event)">
+          <input class="default-value" type="button" value="25%" state="inactive" onclick="active(event)">
+          <input class="default-value" type="button" value="50%" state="inactive" onclick="active(event)">
+          <input class="custom-value" type="number" placeholder="Custom"  state="inactive" onclick="active2(event)" id="custom-percentage">
+        </div>
+        <div class="number-of-people">
+          <div class="restriction-area">
+            <p>Number of People</p>
+            <p id= "cantbezero" class="number-restriction">Can't be zero</p>
+          </div>
+          <input id="people-amount" class="input-area" type="number">
+        
+        </div>
+        <div class="result-area">
+          <div class="tip-amount-area">
+            <div class="tip-amount">
+              <div class="tip-text">
+                <h3>Tip Amount</h3>
+                <p>/ person</p>
+              </div>
+              <output class="total-result" id="tipperperson">
+                $0
+              </output>
+            </div>
+          </div>
+           <div class="total-amount-area">
+            <div class="tip-amount">
+              <div class="tip-text" >
+                <h3>Total</h3>
+                <p>/ person</p>
+              </div>
+              <output class="total-result" id="totalperperson">
+                $0
+              </output>
+            </div>
+            <output id="tip-amount-result"></output>
+          </div>
+          <button class="reset-button">RESET</button>
+      </div>
+    </div>
+  </div>
+<script>
+    let inputarea = document.getElementById("people-amount");
+    inputarea.addEventListener("input", custominput);
+    document.getElementById("bill-amount").addEventListener("input",custominput);
+    document.getElementById("custom-percentage").addEventListener("input",custominput);
+    function custominput(){
+    let tipparent = document.getElementById("percentage-area");
+    console.log(document.getElementById("percentage-area"));
+    let tippercentage;
+    for (let i= 0; i<tipparent.children.length; i++){
+          let child = tipparent.children[i];
+        if (child.getAttribute("state")=="active") {
+            tippercentage = child.value;
+  }
+
+
+    let bill= parseInt(document.getElementById("bill-amount").value);
+    let tiprate = parseInt(tippercentage)/100 ;
+    let numberOfPeople =  parseInt(document.getElementById("people-amount").value);
+    let tipperperson = bill*tiprate/numberOfPeople;
+    let total = (bill*tiprate+bill)/numberOfPeople;
+    console.log(Math.round(100*tipperperson)/100);
+    document.getElementById("tipperperson").innerText = "$"+Math.round(100*tipperperson)/100;
+    document.getElementById("totalperperson").innerText = "$"+Math.round(100*total)/100;
+}
+}
+
+  inputarea.addEventListener("input", ()=> {
+    if(parseInt(inputarea.value)==0) {
+      document.getElementById("cantbezero").style.display = "flex";
+      document.getElementById("people-amount").style.outlineColor = "brown";
+    } else {
+      document.getElementById("cantbezero").style.display = "none";
+      document.getElementById("people-amount").style.outlineColor  = "hsl(172, 67%, 45%)"
+    }
+
+  })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+
+
+:root {
+    font-family: "space mono";  
+    
+}
+body{
+    max-width: 100%;
+    display:flex;
+    justify-content: center;
+    background-color: hsl(185, 41%, 84%);
+    font-family: "space mono";  
+}
+.container {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: hsl(185, 41%, 84%);
+}
+.text-logo {
+    display:flex;
+    justify-content: center;
+    margin: 50px 0px;
+}
+.outer-calculator-box{
+    background-color: hsl(0, 0%, 100%);
+    border-top-left-radius:30px ;
+    border-top-right-radius: 30px;
+    display:flex;
+    justify-content: center;
+    
+    color: hsl(186, 14%, 43%);
+}
+
+.inside-box{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.bill-area p{
+    margin-top: 30px;
+    
+}
+input:active, input:focus { 
+    outline-color: hsl(172, 67%, 45%);
+  }
+.input-area {
+    background-image: url("images/icon-dollar.svg");
+    background-position:10px 50%;
+    background-repeat: no-repeat;
+    width:calc(98% - 15px);
+    height:40px;
+    background-color: hsl(189, 41%, 97%);
+    text-align: right;
+    border-color: transparent;
+    font-weight: 700;
+    font-size: 24px;
+    font-family: "space mono";
+    border-radius: 5px;
+    color:hsl(183, 100%, 15%);
+    padding-right:15px;
+}
+#people-amount{
+    background-image:url("images/icon-person.svg") ;
+}
+
+.number-restriction{
+    color:brown;
+}
+.restriction-area{
+    display:flex;
+    justify-content: space-between;
+}
+.tip-area{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.tip-area p{
+    width:100%;
+}
+.tip-area input {
+    width:47%;
+    font-size: 24px;
+    border-radius: 5px;
+    border: 0px solid transparent;
+    font-family: "space mono";  
+    margin-bottom: 17px;
+    background-color: hsl(183, 100%, 15%);
+    color:hsl(0, 0%, 100%);
+    cursor: pointer;
+    transition: 0.1s;
+}
+.default-value:hover{
+    color: hsl(183, 100%, 15%);
+    background-color:hsl(172, 67%, 45%);
+}
+.custom-value {
+    border:0px  solid transparent;
+    width:calc(47% - 17px)!important;
+    text-align: right;
+    padding-right: 15px;
+    background-color:hsl(189, 41%, 97%)!important;
+    color: hsl(186, 14%, 43%)!important;
+}
+.tip-amount{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding:0px 20px;
+}
+
+
+.tip-text h3{
+    color:hsl(0, 0%, 100%);
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+.tip-text p{
+    margin-top: 3px;
+    font-size: 13px;
+    color: hsl(184, 14%, 56%);
+}
+.total-result {
+    color:hsl(172, 67%, 45%);
+    font-size: 28px;
+}
+.result-area {
+    background-color:hsl(183, 100%, 15%) ;
+    padding-bottom: 25px;
+    padding-top: 20px;
+    border-radius: 14px;
+    margin:30px 0px;
+}
+.reset-button{
+    display:block;
+    margin:auto;
+    border:0px solid transparent;
+    height:45px;
+    width:calc(100% - 40px);
+    border-radius: 5px;
+    font-family: "space mono";
+    font-size:20px;
+    font-weight: 1000;
+    margin-top: 20px;
+    background-color: hsl(172, 67%, 45%);
+    color:hsl(183, 100%, 15%);
+    opacity: 0.3;
+}
+
+#cantbezero{
+    display:none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

@@ -1,8 +1,11 @@
 function active(event)  {
     event.target.style.color = "hsl(183, 100%, 15%)";
     event.target.style.background = "hsl(172, 67%, 45%)";
+    
     event.target.setAttribute("state", "active");
     document.getElementById("custom-percentage").setAttribute("state", "inactive");
+    document.getElementById("reset").style.opacity = "1";
+    document.getElementById("reset").style.opacity = "1";document.getElementById("reset").style.cursor = "pointer";
     let bill= parseInt(document.getElementById("bill-amount").value);
     let tiprate = parseInt(event.target.value)/100 ;
     let numberOfPeople =  parseInt(document.getElementById("people-amount").value);

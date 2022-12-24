@@ -158,3 +158,51 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+@media only screen and (min-width: 700px)  {
+    .inside-box {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .input-box{
+        flex:2
+    }
+    .result-area{
+        flex:2;
+        margin-left: 50px;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #people-amount{
+        margin-bottom: 40px;
+    }
+    .outer-calculator-box{
+        border-radius: 30px;
+        max-width: 900px;
+    }
+    .default-value{
+        height:50px;
+    }
+    .tip-amount-area{
+        margin-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        
+    }
+    .total-amount-area{
+        margin-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .total-result{
+        font-size: 40px;
+    }
+
+    .button-box{
+        margin-bottom: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
